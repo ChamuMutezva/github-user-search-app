@@ -14,7 +14,7 @@ const Main = (props) => {
             .then(response => {
                 console.log("promise fullfilled");
                 setUser(response.data)
-                 console.log(response.data)
+                console.log(response.data)
             })
 
     }, [])
@@ -52,7 +52,11 @@ const Main = (props) => {
                 <label htmlFor="search__user" className="search__lbl">
                     <span className="sr__only">Search for github username </span>
                     <input type="search"
-                        name="search__github__username" placeholder="Search Github username..." id="search__user" className="search__user" />
+                        required
+                        name="search__github__username"
+                        placeholder="Search Github username..."
+                        id="search__user"
+                        className="search__user" />
                 </label>
 
                 <button className="search--btn">Search</button>
@@ -69,7 +73,7 @@ const Main = (props) => {
                     </figcaption>
                 </figure>
                 <p className="extra__content">
-                    {user.bio === null ? <span className="no__bio">"This profile has no bio"</span> : user.bio}                   
+                    {user.bio === null ? <span className="no__bio">"This profile has no bio"</span> : user.bio}
                 </p>
 
                 <div className="card__table">
