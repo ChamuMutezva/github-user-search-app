@@ -1,0 +1,61 @@
+@use '../base';
+@use '../utils';
+
+.card {
+  margin: 1rem 1.5rem;
+  background-color: utils.$white;
+  border-radius: 15px;
+}
+
+.card__profile {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+.profile__card__details {
+  flex: 1 1 60%;
+}
+
+.card__profile__img {
+  //width: 18.7%;
+  max-width: 70px;
+  border-radius: 50%;
+}
+
+.user__name {
+  font-size: utils.calculateRem(16);
+}
+
+.user__handle,
+.user__joined {
+  font-size: utils.calculateRem(13);
+}
+
+.no__bio {
+  opacity: 0.4;
+}
+
+.extra__content {
+  padding: 0 1rem;
+  font-size: utils.calculateRem(13);
+  line-height: 1.8;
+}
+
+.card__table {
+  padding: 1rem;
+}
+.table__data {
+  display: flex;
+  justify-content: space-between;
+  background-color: utils.$lt_mode-bg;
+  padding: 1rem;
+  border-radius: 15px;
+}
+address {
+	padding: 1rem;
+}
+.location, .blog, .twitter, .company__details {
+	display: flex;
+	gap: 1.5rem;
+}

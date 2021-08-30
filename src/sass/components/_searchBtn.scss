@@ -1,0 +1,17 @@
+@use '../base';
+@use '../utils';
+
+.search--btn {
+  top: 50%;
+  position: absolute;
+  height: 40px;
+  margin-top: -20px;
+  right: 8%;
+  font-size: utils.calculateRem(14);
+  font-weight: 700;
+  background-color: utils.$blue;
+  color: utils.$white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  border: none;
+}

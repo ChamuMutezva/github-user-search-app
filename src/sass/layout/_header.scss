@@ -1,0 +1,23 @@
+@use '../base';
+
+.header {
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.light__mode {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme--control {
+  background-color: transparent;
+  border: none;
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+  }
+}
