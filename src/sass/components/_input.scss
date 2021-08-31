@@ -5,14 +5,19 @@
   position: relative;
   display: block;
   width: 100%;
-  padding: 1.2rem 0.5rem;
-  text-align: center;
+  padding: 1.2rem 2rem;
+  text-align: left;
   background-image: url('../../assets/icon-search.svg');
   background-repeat: no-repeat;
-  background-position: 5% center;
+  background-position: 2% center;
   font-size: utils.calculateRem(13); 
   border-radius: 15px;
   border: 2px solid transparent;
+  color: utils.$mid-grey;
+  @media screen  and (min-width: 38.75rem){
+    padding: 1.2rem 3rem;
+    font-size: utils.calculateRem(18); 
+  }
 }
 
 .search__lbl {

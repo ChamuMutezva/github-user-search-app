@@ -2,7 +2,7 @@
 @use '../utils';
 
 .card {
-  margin: 1rem 1.5rem;
+  margin: 1rem auto;
   background-color: utils.$white;
   border-radius: 15px;
 }
@@ -11,20 +11,36 @@
   display: flex;
   gap: 1.5rem;
   padding: 2rem 1rem;
+  @media screen and (min-width: 60rem) {
+    gap: 2.5rem;
+  }
 }
 
 .profile__card__details {
   flex: 1 1 60%;
+  @media screen and (min-width: 60rem) {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
 }
 
 .card__profile__img {
   //width: 18.7%;
   max-width: 70px;
   border-radius: 50%;
+
+  @media screen and (min-width: 38.75rem) {
+    max-width: 200px;
+    width: 20%;
+  }
 }
 
 .user__name {
   font-size: utils.calculateRem(16);
+  color: utils.$very-dark-grey;
+  @media screen and (min-width: 38.75rem) {
+    font-size: utils.calculateRem(26);
+  }
 }
 
 .user__handle,
@@ -32,19 +48,54 @@
   font-size: utils.calculateRem(13);
 }
 
+.user__handle {
+  color: #0079ff;
+  @media screen and (min-width: 38.75rem) {
+    font-size: utils.calculateRem(16);
+  }
+}
+
+.user__joined {
+  color: utils.$mid-grey;
+  @media screen and (min-width: 38.75rem) {
+    font-size: utils.calculateRem(15);
+  }
+  @media screen and (min-width: 60rem) {
+    grid-area: 1/2;
+  }
+}
+
 .no__bio {
   opacity: 0.4;
 }
 
 .extra__content {
+  color: utils.$mid-grey;
   padding: 0 1rem;
   font-size: utils.calculateRem(13);
   line-height: 1.8;
+  @media screen and (min-width: 38.75rem) {
+    font-size: utils.calculateRem(16);
+  }
+
+  @media screen and (min-width: 60rem) {
+    padding: 1rem;
+    max-width: 32rem;
+    margin-right: 2rem;
+    margin-left: auto;
+  }
 }
 
 .card__table {
   padding: 1rem;
+  @media screen and (min-width: 60rem) {
+    padding: 1rem;
+    max-width: 32rem;
+    margin-right: 2rem;
+    margin-left: auto;
+  }
 }
+
 .table__data {
   display: flex;
   justify-content: space-between;
@@ -52,10 +103,42 @@
   padding: 1rem;
   border-radius: 15px;
 }
-address {
-	padding: 1rem;
+
+.address__list {
+  padding: 1rem;
+  @media screen and (min-width: 60rem) {
+    padding: 1rem;
+    max-width: 32rem;
+    margin-right: 2rem;
+    margin-left: auto;
+  }
 }
-.location, .blog, .twitter, .company__details {
-	display: flex;
-	gap: 1.5rem;
+.location,
+.blog,
+.twitter,
+.company__details {
+  display: flex;
+  gap: 1.5rem;
+}
+.address__list__item {
+  margin-bottom: 1.5rem;
+}
+.address__list__img {
+  align-self: center;
+}
+
+.data__heading {
+  font-size: utils.calculateRem(11);
+  @media screen and (min-width: 38.75rem) {
+    font-size: utils.calculateRem(13);
+  }
+}
+
+.data__value {
+  font-size: utils.calculateRem(16);
+  font-weight: 700;
+  color: utils.$very-dark-grey;
+  @media screen and (min-width: 38.75rem) {
+    font-size: utils.calculateRem(22);
+  }
 }

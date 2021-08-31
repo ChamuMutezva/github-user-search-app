@@ -45,7 +45,7 @@ const Main = (props) => {
     }
 
     return (
-        <main>
+        <main className="main">
 
             <form className="search__container" onSubmit={handleSubmit}>
 
@@ -68,7 +68,7 @@ const Main = (props) => {
                     <img className="card__profile__img" src={user.avatar_url} alt="" />
                     <figcaption className="profile__card__details">
                         <h2 className="user__name">{user.name}</h2>
-                        <p className="user__handle">{user.login}</p>
+                        <p className="user__handle">@{user.login}</p>
                         <p className="user__joined">Joined<time dateTime="2011"> {dateJoined} {month} {year}</time> </p>
                     </figcaption>
                 </figure>
@@ -79,37 +79,54 @@ const Main = (props) => {
                 <div className="card__table">
                     <dl className="table__data">
                         <div className="repos__container">
-                            <dt>Repos</dt>
-                            <dd>{user.public_repos}</dd>
+                            <dt className="data__heading">Repos</dt>
+                            <dd className="data__value">{user.public_repos}</dd>
                         </div>
                         <div className="followers__container">
-                            <dt>Followers</dt>
-                            <dd>{user.followers}</dd>
+                            <dt className="data__heading">Followers</dt>
+                            <dd className="data__value">{user.followers}</dd>
                         </div>
                         <div className="following__container">
-                            <dt>Following</dt>
-                            <dd>{user.following}</dd>
+                            <dt className="data__heading">Following</dt>
+                            <dd className="data__value">{user.following}</dd>
                         </div>
                     </dl>
                 </div>
 
-                <address>
-                    <div className="location">
-                        <img src={LocationImg} alt="" />
-                        <span className="area">{user.location}</span>
+                <address className="address__list">
+
+                    <div className="address__list__item location">
+                        <img className="address__list__img location__img" src={LocationImg} alt="" />
+                        <p className="area">{user.location}</p>
                     </div>
-                    <div className="blog">
-                        <img className="blog__img" src={Blog} alt="" />
-                        <span className="user__blog">{user.blog}</span>
+
+                    <div className="address__list__item blog">
+                        <img className="address__list__img blog__img" src={Blog} alt="" />
+                        <p className="user__blog">
+                            {user.blog === null ?
+                                <span className="no__bio">Not available</span> :
+                                user.blog}
+                        </p>
                     </div>
-                    <div className="twitter">
-                        <img className="twitter__img" src={Twitter} alt="" />
-                        <span className="user__twitter">{user.twitter_username}</span>
+
+                    <div className="address__list__item twitter">
+                        <img className="address__list__img twitter__img" src={Twitter} alt="" />
+                        <p className="user__twitter">
+                            {user.twitter_username === null ?
+                                <span className="no__bio">Not available</span> :
+                                user.twitter_username}
+                        </p>
                     </div>
-                    <div className="company__details">
-                        <img className="company__img" src={CompanyImg} alt="" />
-                        <span className="company__name">{user.company}</span>
+
+                    <div className="address__list__item company__details">
+                        <img className="address__list__img company__img" src={CompanyImg} alt="" />
+                        <p className="company__name">
+                            {user.company === null ?
+                                <span className="no__bio">Not available</span> :
+                                user.company}
+                        </p>
                     </div>
+
                 </address>
             </div>
 

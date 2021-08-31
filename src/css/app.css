@@ -98,14 +98,21 @@ select {
   position: relative;
   display: block;
   width: 100%;
-  padding: 1.2rem 0.5rem;
-  text-align: center;
+  padding: 1.2rem 2rem;
+  text-align: left;
   background-image: url("../../assets/icon-search.svg");
   background-repeat: no-repeat;
-  background-position: 5% center;
-  font-size: 0.8125rem;
+  background-position: 2% center;
+  font-size: 0.8666666667rem;
   border-radius: 15px;
   border: 2px solid transparent;
+  color: #8897af;
+}
+@media screen and (min-width: 38.75rem) {
+  .search__user {
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+  }
 }
 
 .search__lbl {
@@ -119,45 +126,191 @@ select {
 .search--btn {
   top: 50%;
   position: absolute;
-  height: 40px;
   margin-top: -20px;
-  right: 8%;
-  font-size: 0.875rem;
+  right: 2%;
+  font-size: 0.9333333333rem;
   font-weight: 700;
   background-color: #0077ff;
   color: white;
-  padding: 0.5rem 0.75rem;
+  padding: 0.75rem;
   border-radius: 10px;
   border: none;
 }
+@media screen and (min-width: 38.75rem) {
+  .search--btn {
+    font-size: 1.0666666667rem;
+  }
+}
 
 .card {
-  padding: 1rem 1.5rem;
+  margin: 1rem auto;
+  background-color: white;
+  border-radius: 15px;
 }
 
 .card__profile {
   display: flex;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+@media screen and (min-width: 60rem) {
+  .card__profile {
+    gap: 2.5rem;
+  }
 }
 
 .profile__card__details {
   flex: 1 1 60%;
 }
+@media screen and (min-width: 60rem) {
+  .profile__card__details {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+}
 
 .card__profile__img {
-  max-width: 100px;
+  max-width: 70px;
   border-radius: 50%;
+}
+@media screen and (min-width: 38.75rem) {
+  .card__profile__img {
+    max-width: 200px;
+    width: 20%;
+  }
 }
 
 .user__name {
-  font-size: 1rem;
+  font-size: 1.0666666667rem;
+  color: #2b3442;
+}
+@media screen and (min-width: 38.75rem) {
+  .user__name {
+    font-size: 1.7333333333rem;
+  }
 }
 
-.user__handle, .user__joined {
-  font-size: 0.8125rem;
+.user__handle,
+.user__joined {
+  font-size: 0.8666666667rem;
+}
+
+.user__handle {
+  color: #0079ff;
+}
+@media screen and (min-width: 38.75rem) {
+  .user__handle {
+    font-size: 1.0666666667rem;
+  }
+}
+
+.user__joined {
+  color: #8897af;
+}
+@media screen and (min-width: 38.75rem) {
+  .user__joined {
+    font-size: 1rem;
+  }
+}
+@media screen and (min-width: 60rem) {
+  .user__joined {
+    grid-area: 1/2;
+  }
+}
+
+.no__bio {
+  opacity: 0.4;
+}
+
+.extra__content {
+  color: #8897af;
+  padding: 0 1rem;
+  font-size: 0.8666666667rem;
+  line-height: 1.8;
+}
+@media screen and (min-width: 38.75rem) {
+  .extra__content {
+    font-size: 1.0666666667rem;
+  }
+}
+@media screen and (min-width: 60rem) {
+  .extra__content {
+    padding: 1rem;
+    max-width: 32rem;
+    margin-right: 2rem;
+    margin-left: auto;
+  }
+}
+
+.card__table {
+  padding: 1rem;
+}
+@media screen and (min-width: 60rem) {
+  .card__table {
+    padding: 1rem;
+    max-width: 32rem;
+    margin-right: 2rem;
+    margin-left: auto;
+  }
+}
+
+.table__data {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f6f8ff;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.address__list {
+  padding: 1rem;
+}
+@media screen and (min-width: 60rem) {
+  .address__list {
+    padding: 1rem;
+    max-width: 32rem;
+    margin-right: 2rem;
+    margin-left: auto;
+  }
+}
+
+.location,
+.blog,
+.twitter,
+.company__details {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.address__list__item {
+  margin-bottom: 1.5rem;
+}
+
+.address__list__img {
+  align-self: center;
+}
+
+.data__heading {
+  font-size: 0.7333333333rem;
+}
+@media screen and (min-width: 38.75rem) {
+  .data__heading {
+    font-size: 0.8666666667rem;
+  }
+}
+
+.data__value {
+  font-size: 1.0666666667rem;
+  font-weight: 700;
+  color: #2b3442;
+}
+@media screen and (min-width: 38.75rem) {
+  .data__value {
+    font-size: 1.4666666667rem;
+  }
 }
 
 .header {
-  padding: 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -169,6 +322,19 @@ select {
   gap: 1rem;
 }
 
+.app__title {
+  font-size: 1.7333333333rem;
+  color: #222731;
+  font-weight: 700;
+}
+
+.mode__state {
+  font-size: 0.8666666667rem;
+  color: #4b6a9b;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
 .theme--control {
   background-color: transparent;
   border: none;
@@ -177,8 +343,28 @@ select {
   cursor: pointer;
 }
 
+.container {
+  padding: 1rem 1.5rem;
+  max-width: 38.2rem;
+  margin: auto;
+}
+@media screen and (min-width: 38.75rem) {
+  .container {
+    padding: 8rem 1.5rem;
+  }
+}
+@media screen and (min-width: 60rem) {
+  .container {
+    max-width: 48.7rem;
+    padding: 8rem 1.5rem;
+  }
+}
+
+.main {
+  margin: 2.5rem auto;
+}
+
 .search__container {
-  padding: 0 1.5rem;
   position: relative;
 }
 

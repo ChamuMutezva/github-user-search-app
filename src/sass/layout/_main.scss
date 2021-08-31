@@ -1,6 +1,23 @@
 @use '../base';
 
+.container {
+  padding: 1rem 1.5rem;
+  max-width: 38.2rem;
+  margin: auto;
+
+  @media screen  and (min-width: 38.75rem){
+    padding: 8rem 1.5rem; 
+  }
+
+  @media screen  and (min-width: 60rem){
+      max-width: 48.7rem;
+    padding: 8rem 1.5rem; 
+  }
+}
+.main {
+  margin: 2.5rem auto;
+}
 .search__container {
-	padding: 0 1.5rem;
-    position: relative;
+  //padding: 0 1.5rem;
+  position: relative;
 }
