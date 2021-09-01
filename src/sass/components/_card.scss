@@ -142,3 +142,20 @@
     font-size: utils.calculateRem(22);
   }
 }
+
+.address--link {
+  color: utils.$dark-grey;
+}
+
+.err {
+	position: absolute;
+	left: 40%;
+	top: 0;
+	font-size: 14px;
+  color: #F74646;
+  display: none;
+}
+
+.err__show {
+  display: block;
+}

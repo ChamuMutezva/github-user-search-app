@@ -30,6 +30,7 @@ const Main = (props) => {
 
     function handleSubmit(evt) {
         evt.preventDefault()
+        
         const searchValue = document.querySelector(".search__user").value
         const url = "https://api.github.com/users/"
 
@@ -38,6 +39,10 @@ const Main = (props) => {
             .get(`${url}${searchValue}`)
             .then(response => {
                 setUser(response.data)
+                console.log(response.data)
+            })
+            .catch(err => {
+                console.log(err.response.status)
             })
         // console.log("user")
         console.log(user)
@@ -56,9 +61,9 @@ const Main = (props) => {
                         name="search__github__username"
                         placeholder="Search Github username..."
                         id="search__user"
-                        className="search__user" />
+                        className="search__user" />                    
                 </label>
-
+                <span className="err">No results</span>
                 <button className="search--btn">Search</button>
 
             </form>
@@ -96,35 +101,62 @@ const Main = (props) => {
                 <address className="address__list">
 
                     <div className="address__list__item location">
-                        <img className="address__list__img location__img" src={LocationImg} alt="" />
+
+                        <img className="address__list__img location__img"
+                            src={LocationImg}
+                            alt="" />
                         <p className="area">{user.location}</p>
+
                     </div>
 
                     <div className="address__list__item blog">
-                        <img className="address__list__img blog__img" src={Blog} alt="" />
+
+                        <img className="address__list__img blog__img"
+                            src={Blog}
+                            alt="" />
                         <p className="user__blog">
                             {user.blog === null ?
                                 <span className="no__bio">Not available</span> :
-                                user.blog}
+                                <a className="address--link"
+                                    href={user.blog}>{user.blog}
+                                </a>
+                            }
                         </p>
+
                     </div>
 
                     <div className="address__list__item twitter">
-                        <img className="address__list__img twitter__img" src={Twitter} alt="" />
+
+                        <img className="address__list__img twitter__img"
+                            src={Twitter}
+                            alt="" />
+
                         <p className="user__twitter">
                             {user.twitter_username === null ?
                                 <span className="no__bio">Not available</span> :
-                                user.twitter_username}
+                                <a className="address--link"
+                                    href={`https://twitter.com/${user.twitter_username}`}>
+                                    {user.twitter_username}
+                                </a>
+                            }
                         </p>
                     </div>
 
                     <div className="address__list__item company__details">
-                        <img className="address__list__img company__img" src={CompanyImg} alt="" />
+
+                        <img className="address__list__img company__img"
+                            src={CompanyImg}
+                            alt="" />
                         <p className="company__name">
                             {user.company === null ?
                                 <span className="no__bio">Not available</span> :
-                                user.company}
+                                <a className="address--link"
+                                    href={user.company}>
+                                    {user.company}
+                                </a>
+                            }
                         </p>
+
                     </div>
 
                 </address>

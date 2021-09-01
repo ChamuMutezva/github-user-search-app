@@ -8,14 +8,18 @@ const Header = () => {
     const handleClick = () => {
         const modeState = document.querySelector(".mode__state")
         const modeImg = document.querySelector(".mode__img")
+        const body = document.querySelector("body")
         setTheme(!theme)
         console.log(theme)
         if (theme) {
+            body.classList.add("theme-dark")
             modeState.innerHTML = "Light"
             modeImg.src = `${Sun}`
         } else {
+            body.classList.remove("theme-dark")
             modeState.innerHTML = "Dark"
             modeImg.src = `${Moon}`
+
         }
     }
 

@@ -1,0 +1,30 @@
+@use './variables';
+@mixin theme($name, $color, $secondary) {
+  //$secondary: variables.$white;
+  .#{$name} {
+    background-color: $color;
+    // color: $secondary;
+    .app__title,
+    .user__name,
+    .mode__state,
+    .data__value {
+      color: $secondary;
+    }
+    .search__user,
+    .card {
+      background-color: #1e2a47;
+      color: $secondary;
+    }
+
+    .table__data {
+      background-color: $color;
+    }
+
+    .address--link {
+        color: variables.$white;
+    }
+  }
+}
+
+@include theme(theme-light, variables.$lt-mode-bg, variables.$very-dark-grey);
+@include theme(theme-dark, variables.$very-dark-grey, variables.$white);

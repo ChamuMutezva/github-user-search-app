@@ -94,6 +94,48 @@ select {
   border: 0;
 }
 
+.theme-light {
+  background-color: #f6f8ff;
+}
+.theme-light .app__title,
+.theme-light .user__name,
+.theme-light .mode__state,
+.theme-light .data__value {
+  color: #2b3442;
+}
+.theme-light .search__user,
+.theme-light .card {
+  background-color: #1e2a47;
+  color: #2b3442;
+}
+.theme-light .table__data {
+  background-color: #f6f8ff;
+}
+.theme-light .address--link {
+  color: white;
+}
+
+.theme-dark {
+  background-color: #2b3442;
+}
+.theme-dark .app__title,
+.theme-dark .user__name,
+.theme-dark .mode__state,
+.theme-dark .data__value {
+  color: white;
+}
+.theme-dark .search__user,
+.theme-dark .card {
+  background-color: #1e2a47;
+  color: white;
+}
+.theme-dark .table__data {
+  background-color: #2b3442;
+}
+.theme-dark .address--link {
+  color: white;
+}
+
 .search__user {
   position: relative;
   display: block;
@@ -308,6 +350,23 @@ select {
   .data__value {
     font-size: 1.4666666667rem;
   }
+}
+
+.address--link {
+  color: #4b699b;
+}
+
+.err {
+  position: absolute;
+  left: 40%;
+  top: 0;
+  font-size: 14px;
+  color: #F74646;
+  display: none;
+}
+
+.err__show {
+  display: block;
 }
 
 .header {
