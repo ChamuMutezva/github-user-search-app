@@ -30,10 +30,10 @@ const Main = (props) => {
 
     function handleSubmit(evt) {
         evt.preventDefault()
-        
+        const err__span = document.querySelector(".err")
         const searchValue = document.querySelector(".search__user").value
         const url = "https://api.github.com/users/"
-
+        err__span.classList.remove("err__show")
         console.log(searchValue)
         axios
             .get(`${url}${searchValue}`)
@@ -43,6 +43,9 @@ const Main = (props) => {
             })
             .catch(err => {
                 console.log(err.response.status)
+                if (err.response.status === 404) {
+                    err__span.classList.add("err__show")
+                }
             })
         // console.log("user")
         console.log(user)
@@ -58,21 +61,22 @@ const Main = (props) => {
                     <span className="sr__only">Search for github username </span>
                     <input type="search"
                         required
+                        autoComplete
                         name="search__github__username"
                         placeholder="Search Github username..."
                         id="search__user"
-                        className="search__user" />                    
+                        className="search__user" />
                 </label>
                 <span className="err">No results</span>
                 <button className="search--btn">Search</button>
 
             </form>
 
-            <div className="card">
+            <div className="card" role="region" aria-live="polite">
                 <figure className="card__profile">
                     <img className="card__profile__img" src={user.avatar_url} alt="" />
                     <figcaption className="profile__card__details">
-                        <h2 className="user__name">{user.name}</h2>
+                        <h2 className="user__name">{user.name === null ? user.login : user.name}</h2>
                         <p className="user__handle">@{user.login}</p>
                         <p className="user__joined">Joined<time dateTime="2011"> {dateJoined} {month} {year}</time> </p>
                     </figcaption>
@@ -104,7 +108,7 @@ const Main = (props) => {
 
                         <img className="address__list__img location__img"
                             src={LocationImg}
-                            alt="" />
+                            alt="wher user is located" />
                         <p className="area">{user.location}</p>
 
                     </div>
@@ -118,6 +122,7 @@ const Main = (props) => {
                             {user.blog === null ?
                                 <span className="no__bio">Not available</span> :
                                 <a className="address--link"
+                                    arial-label="user blog post"
                                     href={user.blog}>{user.blog}
                                 </a>
                             }
@@ -135,6 +140,7 @@ const Main = (props) => {
                             {user.twitter_username === null ?
                                 <span className="no__bio">Not available</span> :
                                 <a className="address--link"
+                                    arial-label="twitter handle"
                                     href={`https://twitter.com/${user.twitter_username}`}>
                                     {user.twitter_username}
                                 </a>
@@ -151,7 +157,8 @@ const Main = (props) => {
                             {user.company === null ?
                                 <span className="no__bio">Not available</span> :
                                 <a className="address--link"
-                                    href={user.company}>
+                                    aria-label="company website"
+                                    href={`https://${user.company}.com`}>
                                     {user.company}
                                 </a>
                             }

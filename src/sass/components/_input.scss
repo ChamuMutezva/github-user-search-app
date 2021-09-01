@@ -7,23 +7,31 @@
   width: 100%;
   padding: 1.2rem 2rem;
   text-align: left;
-  background-image: url('../../assets/icon-search.svg');
+  background-image: url("../../assets/icon-search.svg");
   background-repeat: no-repeat;
   background-position: 2% center;
-  font-size: utils.calculateRem(13); 
+  font-size: utils.calculateRem(13);
   border-radius: 15px;
   border: 2px solid transparent;
   color: utils.$mid-grey;
-  @media screen  and (min-width: 38.75rem){
+  outline: none;
+  
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }
+  @media screen and (min-width: 38.75rem) {
     padding: 1.2rem 3rem;
-    font-size: utils.calculateRem(18); 
+    font-size: utils.calculateRem(18);
   }
 }
 
 .search__lbl {
   position: relative;
- 
- /*
+
+  /*
   &:not(:placeholder-shown) {
     z-index: 1;
   }*/

@@ -97,6 +97,11 @@ select {
 .theme-light {
   background-color: #f6f8ff;
 }
+.theme-light .theme--control:hover, .theme-light .theme--control:focus {
+  cursor: pointer;
+  outline: dashed #2b3442;
+  outline-offset: 0.25em;
+}
 .theme-light .app__title,
 .theme-light .user__name,
 .theme-light .mode__state,
@@ -113,10 +118,21 @@ select {
 }
 .theme-light .address--link {
   color: white;
+  outline: none;
+}
+.theme-light .address--link:hover, .theme-light .address--link:focus {
+  cursor: pointer;
+  outline: dashed #2b3442;
+  outline-offset: 0.25em;
 }
 
 .theme-dark {
   background-color: #2b3442;
+}
+.theme-dark .theme--control:hover, .theme-dark .theme--control:focus {
+  cursor: pointer;
+  outline: dashed white;
+  outline-offset: 0.25em;
 }
 .theme-dark .app__title,
 .theme-dark .user__name,
@@ -134,6 +150,12 @@ select {
 }
 .theme-dark .address--link {
   color: white;
+  outline: none;
+}
+.theme-dark .address--link:hover, .theme-dark .address--link:focus {
+  cursor: pointer;
+  outline: dashed white;
+  outline-offset: 0.25em;
 }
 
 .search__user {
@@ -149,6 +171,12 @@ select {
   border-radius: 15px;
   border: 2px solid transparent;
   color: #8897af;
+  outline: none;
+}
+.search__user:hover, .search__user:focus {
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
 }
 @media screen and (min-width: 38.75rem) {
   .search__user {
@@ -160,9 +188,9 @@ select {
 .search__lbl {
   position: relative;
   /*
-   &:not(:placeholder-shown) {
-     z-index: 1;
-   }*/
+  &:not(:placeholder-shown) {
+    z-index: 1;
+  }*/
 }
 
 .search--btn {
@@ -177,6 +205,12 @@ select {
   padding: 0.75rem;
   border-radius: 10px;
   border: none;
+  outline: none;
+}
+.search--btn:hover, .search--btn:focus {
+  cursor: pointer;
+  outline: dashed #0077ff;
+  outline-offset: 0.25em;
 }
 @media screen and (min-width: 38.75rem) {
   .search--btn {
@@ -207,7 +241,7 @@ select {
 @media screen and (min-width: 60rem) {
   .profile__card__details {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 2fr;
   }
 }
 
@@ -354,6 +388,12 @@ select {
 
 .address--link {
   color: #4b699b;
+  outline: none;
+}
+.address--link:hover, .address--link:focus {
+  cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
 }
 
 .err {
@@ -361,7 +401,7 @@ select {
   left: 40%;
   top: 0;
   font-size: 14px;
-  color: #F74646;
+  color: #f74646;
   display: none;
 }
 
@@ -397,9 +437,12 @@ select {
 .theme--control {
   background-color: transparent;
   border: none;
+  outline: none;
 }
-.theme--control:focus, .theme--control:hover {
+.theme--control:hover, .theme--control:focus {
   cursor: pointer;
+  outline: dashed currentColor;
+  outline-offset: 0.25em;
 }
 
 .container {

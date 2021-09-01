@@ -4,6 +4,15 @@
   .#{$name} {
     background-color: $color;
     // color: $secondary;
+    .theme--control {
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        outline: dashed $secondary;
+        outline-offset: 0.25em;
+      }
+    }
+
     .app__title,
     .user__name,
     .mode__state,
@@ -21,7 +30,15 @@
     }
 
     .address--link {
-        color: variables.$white;
+      color: variables.$white;
+      outline: none;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        outline: dashed $secondary;
+        outline-offset: 0.25em;
+      }
     }
   }
 }

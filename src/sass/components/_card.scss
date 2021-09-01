@@ -20,7 +20,7 @@
   flex: 1 1 60%;
   @media screen and (min-width: 60rem) {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 2fr;
   }
 }
 
@@ -145,14 +145,21 @@
 
 .address--link {
   color: utils.$dark-grey;
+  outline: none;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
+  }
 }
 
 .err {
-	position: absolute;
-	left: 40%;
-	top: 0;
-	font-size: 14px;
-  color: #F74646;
+  position: absolute;
+  left: 40%;
+  top: 0;
+  font-size: 14px;
+  color: #f74646;
   display: none;
 }
 

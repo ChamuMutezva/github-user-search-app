@@ -27,9 +27,13 @@
 .theme--control {
   background-color: transparent;
   border: none;
+  outline: none;
 
-  &:focus,
-  &:hover {
+  &:hover,
+  &:focus {
     cursor: pointer;
+    outline: dashed currentColor;
+    outline-offset: 0.25em;
   }
+  
 }
