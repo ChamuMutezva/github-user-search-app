@@ -97,6 +97,12 @@ Use this section to outline areas that you want to continue focusing on in futur
 ### Useful resources
 
 - [accessibility resources](https://accessibilityresources.org/aria-live)
+- [How to Read React Errors - fix 'Cannot read property of undefined'!](https://daveceddia.com/fix-react-errors/)
+- [themify react app with sass](https://www.webtips.dev/how-i-theme-my-react-app-with-sass)
+- [the best way to add dark mode to your react/sass app](https://javascript.plainenglish.io/the-best-way-to-add-dark-mode-to-your-react-sass-project-ce3ae3bd8616)
+- [sass color themes](https://www.sitepoint.com/dealing-color-schemes-sass/)
+- [css theme switcher](https://joshuatz.com/posts/2019/coding-a-css-theme-switcher-a-multitude-of-web-dev-options/#method-b)
+- [positioning elements in the web](https://thoughtbot.com/blog/positioning)
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 

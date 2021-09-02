@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useState , useRef , useEffect} from 'react'
+import { gsap } from 'gsap'
 import Moon from '../assets/icon-moon.svg'
 import Sun from '../assets/icon-sun.svg'
 const Header = () => {
 
     const [theme, setTheme] = useState(true)
+
+    const headerTitle = useRef()
 
     const handleClick = () => {
         const modeState = document.querySelector(".mode__state")
@@ -23,9 +26,13 @@ const Header = () => {
         }
     }
 
+    useEffect(() => {
+        gsap.from(headerTitle.current, {opacity: 0, duration: 2})
+    })
+
     return (
         <header className="header">
-            <h1 className="app__title">devfinder</h1>
+            <h1 className="app__title" ref={headerTitle}>devfinder</h1>
 
             <button className="theme--control"
                 aria-label="theme toggle light and dark mode"

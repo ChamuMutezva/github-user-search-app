@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { gsap } from 'gsap'
 import axios from 'axios'
 import LocationImg from '../assets/icon-location.svg'
 import CompanyImg from '../assets/icon-company.svg'
@@ -40,14 +41,16 @@ const Main = (props) => {
             .then(response => {
                 setUser(response.data)
                 console.log(response.data)
+                gsap.from(".card__profile__img", {opacity: 0, duration: 2, ease: "bounce"})
             })
             .catch(err => {
                 console.log(err.response.status)
                 if (err.response.status === 404) {
                     err__span.classList.add("err__show")
+                    gsap.from(".err", {opacity: 0, duration: 3, ease: "bounce"})
                 }
             })
-        // console.log("user")
+        
         console.log(user)
 
     }
@@ -153,6 +156,7 @@ const Main = (props) => {
                         <img className="address__list__img company__img"
                             src={CompanyImg}
                             alt="" />
+
                         <p className="company__name">
                             {user.company === null ?
                                 <span className="no__bio">Not available</span> :
