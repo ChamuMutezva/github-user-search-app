@@ -27,7 +27,7 @@ const Header = () => {
     }
 
     useEffect(() => {
-        gsap.from(headerTitle.current, {opacity: 0, duration: 2})
+        gsap.from(headerTitle.current, { opacity: 0, ease: "power3.out", duration: 2})
     })
 
     return (

@@ -196,7 +196,7 @@ select {
 .search--btn {
   top: 50%;
   position: absolute;
-  margin-top: -20px;
+  margin-top: -24px;
   right: 2%;
   font-size: 0.9333333333rem;
   font-weight: 700;
@@ -263,6 +263,7 @@ select {
 @media screen and (min-width: 38.75rem) {
   .user__name {
     font-size: 1.7333333333rem;
+    line-height: 0.7;
   }
 }
 

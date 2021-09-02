@@ -32,25 +32,37 @@ const Main = (props) => {
     function handleSubmit(evt) {
         evt.preventDefault()
         const err__span = document.querySelector(".err")
-        const searchValue = document.querySelector(".search__user").value
+        const search__element = document.querySelector(".search__user")
+        const searchValue = search__element.value
         const url = "https://api.github.com/users/"
         err__span.classList.remove("err__show")
         console.log(searchValue)
         axios
             .get(`${url}${searchValue}`)
             .then(response => {
-                setUser(response.data)
-                console.log(response.data)
-                gsap.from(".card__profile__img", {opacity: 0, duration: 2, ease: "bounce"})
+                if (response.status >= 200 && response.status <= 299) {
+                    setUser(response.data)
+                    console.log(response.data)
+                    console.log(response.status)
+                    search__element.value = ""
+                    gsap.from(".card__profile__img", { opacity: 0, duration: 2, ease: "bounce" })
+                } else {
+                    throw Error(response.statusText);
+                }
+                /*  setUser(response.data)
+                  console.log(response.data)
+                  console.log(response.status)
+                  search__element.value = ""
+                  gsap.from(".card__profile__img", { opacity: 0, duration: 2, ease: "bounce" })*/
             })
             .catch(err => {
                 console.log(err.response.status)
                 if (err.response.status === 404) {
                     err__span.classList.add("err__show")
-                    gsap.from(".err", {opacity: 0, duration: 3, ease: "bounce"})
+                    gsap.from(".err", { opacity: 0, duration: 3, ease: "bounce" })
                 }
             })
-        
+
         console.log(user)
 
     }
@@ -64,7 +76,6 @@ const Main = (props) => {
                     <span className="sr__only">Search for github username </span>
                     <input type="search"
                         required
-                        autoComplete
                         name="search__github__username"
                         placeholder="Search Github username..."
                         id="search__user"
@@ -111,7 +122,7 @@ const Main = (props) => {
 
                         <img className="address__list__img location__img"
                             src={LocationImg}
-                            alt="wher user is located" />
+                            alt="where user is located" />
                         <p className="area">{user.location}</p>
 
                     </div>
@@ -123,10 +134,11 @@ const Main = (props) => {
                             alt="" />
                         <p className="user__blog">
                             {user.blog === null ?
-                                <span className="no__bio">Not available</span> :
+                                <span className="no__bio" aria-hidden={true} >Not available</span> :
                                 <a className="address--link"
                                     arial-label="user blog post"
                                     href={user.blog}>{user.blog}
+                                    <span className="sr__only"> blog post</span>
                                 </a>
                             }
                         </p>
@@ -141,11 +153,12 @@ const Main = (props) => {
 
                         <p className="user__twitter">
                             {user.twitter_username === null ?
-                                <span className="no__bio">Not available</span> :
+                                <span className="no__bio" aria-hidden={true}>Not available</span> :
                                 <a className="address--link"
                                     arial-label="twitter handle"
                                     href={`https://twitter.com/${user.twitter_username}`}>
                                     {user.twitter_username}
+                                    <span className="sr__only"> twitter handle</span>
                                 </a>
                             }
                         </p>
@@ -159,11 +172,12 @@ const Main = (props) => {
 
                         <p className="company__name">
                             {user.company === null ?
-                                <span className="no__bio">Not available</span> :
+                                <span className="no__bio" aria-hidden={true}>Not available</span> :
                                 <a className="address--link"
                                     aria-label="company website"
                                     href={`https://${user.company}.com`}>
                                     {user.company}
+                                    <span className="sr__only"> company website</span>
                                 </a>
                             }
                         </p>
