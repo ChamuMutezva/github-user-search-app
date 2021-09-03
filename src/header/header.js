@@ -8,19 +8,12 @@ const Header = () => {
     const savedTheme = JSON.parse(localStorage.getItem("globalTheme"))
     console.log(savedTheme)
     const [theme, setTheme] = useState(savedTheme)
-
-
     const headerTitle = useRef()
 
-
-
-    const handleClick = () => {
+    const themeControl = () => {
         const modeState = document.querySelector(".mode__state")
         const modeImg = document.querySelector(".mode__img")
         const body = document.querySelector("body")
-        setTheme(!theme)
-        console.log(theme)
-
         if (theme) {
             body.classList.add("theme-dark")
             modeState.innerHTML = "Light"
@@ -30,10 +23,23 @@ const Header = () => {
             body.classList.remove("theme-dark")
             modeState.innerHTML = "Dark"
             modeImg.src = `${Moon}`
-
         }
-        localStorage.setItem("globalTheme", theme);
+        
+    }
 
+    useEffect(() => {
+        themeControl()
+    })
+
+    //themeControl()
+
+
+    const handleClick = () => {
+        localStorage.setItem("globalTheme", !theme);
+        setTheme(!theme)
+        console.log(theme)
+        themeControl()
+       
     }
 
     useEffect(() => {
