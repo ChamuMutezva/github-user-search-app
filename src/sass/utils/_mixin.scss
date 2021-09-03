@@ -1,9 +1,8 @@
 @use './variables';
-@mixin theme($name, $color, $secondary) {
-  //$secondary: variables.$white;
+
+@mixin theme($name, $color, $secondary) {  
   .#{$name} {
-    background-color: $color;
-    // color: $secondary;
+    background-color: $color;    
     .theme--control {
       &:hover,
       &:focus {
