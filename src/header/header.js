@@ -1,12 +1,18 @@
-import { useState , useRef , useEffect} from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { gsap } from 'gsap'
 import Moon from '../assets/icon-moon.svg'
 import Sun from '../assets/icon-sun.svg'
 const Header = () => {
+    const localStorage = window.localStorage
+    console.log(localStorage.getItem("globalTheme"))
+    const savedTheme = JSON.parse(localStorage.getItem("globalTheme"))
+    console.log(savedTheme)
+    const [theme, setTheme] = useState(savedTheme)
 
-    const [theme, setTheme] = useState(true)
 
     const headerTitle = useRef()
+
+
 
     const handleClick = () => {
         const modeState = document.querySelector(".mode__state")
@@ -14,20 +20,24 @@ const Header = () => {
         const body = document.querySelector("body")
         setTheme(!theme)
         console.log(theme)
+
         if (theme) {
             body.classList.add("theme-dark")
             modeState.innerHTML = "Light"
             modeImg.src = `${Sun}`
+
         } else {
             body.classList.remove("theme-dark")
             modeState.innerHTML = "Dark"
             modeImg.src = `${Moon}`
 
         }
+        localStorage.setItem("globalTheme", theme);
+
     }
 
     useEffect(() => {
-        gsap.from(headerTitle.current, { opacity: 0, ease: "power3.out", duration: 2})
+        gsap.from(headerTitle.current, { opacity: 0, ease: "power3.out", duration: 2 })
     })
 
     return (
