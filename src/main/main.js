@@ -49,11 +49,7 @@ const Main = (props) => {
                 } else {
                     throw Error(response.statusText);
                 }
-                /*  setUser(response.data)
-                  console.log(response.data)
-                  console.log(response.status)
-                  search__element.value = ""
-                  gsap.from(".card__profile__img", { opacity: 0, duration: 2, ease: "bounce" })*/
+                
             })
             .catch(err => {
                 console.log(err.response.status)
