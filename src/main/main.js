@@ -135,10 +135,9 @@ const Main = (props) => {
                         <p className="user__blog">
                             {user.blog === null ?
                                 <span className="no__bio" aria-hidden={true} >Not available</span> :
-                                <a className="address--link"
-                                    arial-label="user blog post"
+                                <a className="address--link"                                   
                                     href={user.blog}>{user.blog}
-                                    <span className="sr__only"> blog post</span>
+                                    <span className="sr__only">user blog post</span>
                                 </a>
                             }
                         </p>

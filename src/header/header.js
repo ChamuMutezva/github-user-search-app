@@ -52,7 +52,7 @@ const Header = () => {
                 aria-label="theme toggle light and dark mode"
                 onClick={handleClick}>
 
-                <div className="light__mode"
+                <span className="light__mode"
                     aria-live="polite">
 
                     <span className="mode__state">Dark</span>
@@ -60,7 +60,7 @@ const Header = () => {
                         src={Moon}
                         alt="" />
 
-                </div>
+                </span>
             </button>
 
         </header>
