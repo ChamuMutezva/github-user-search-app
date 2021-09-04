@@ -344,10 +344,18 @@ select {
 }
 @media screen and (min-width: 60rem) {
   .address__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding: 1rem;
     max-width: 32rem;
     margin-right: 2rem;
     margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  .twitter {
+    grid-area: 1/2;
   }
 }
 
