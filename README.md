@@ -31,9 +31,13 @@ Users should be able to:
 
 ### Screenshot
 
+#### Sketch designs
+
 ![mobile sketch](./src/assets/sketch-mobile.png)
 
 ![tablet sketch](./src/assets/sketch-tablet.png)
+
+#### Preview designs
 
 ![mobile preview](./src/assets/preview-mobile.png)
 
@@ -64,7 +68,14 @@ Users should be able to:
 - [themes in react](https://javascript.plainenglish.io/the-best-way-to-add-dark-mode-to-your-react-sass-project-ce3ae3bd8616)
 
 ```scss
-// sass theming - 
+// sass theming 
+// theme refers to the mixin name
+// $name refers to the classes to be added to control the themes
+// the classes are theme-dark and theme-light and are added to the body element
+// in this particular case the main class is the theme light and the theme-dark 
+// is toggled .
+// $color is the background-color and $secondary is the font colour
+
 @mixin theme($name, $color, $secondary) {  
   .#{$name} {
     background-color: $color;    
@@ -124,8 +135,6 @@ Users should be able to:
 - [css theme switcher](https://joshuatz.com/posts/2019/coding-a-css-theme-switcher-a-multitude-of-web-dev-options/#method-b)
 - [positioning elements in the web](https://thoughtbot.com/blog/positioning)
 - [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
 
 ## Author
 

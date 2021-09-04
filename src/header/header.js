@@ -31,9 +31,7 @@ const Header = () => {
         themeControl()
     })
 
-    //themeControl()
-
-
+  
     const handleClick = () => {
         localStorage.setItem("globalTheme", !theme);
         setTheme(!theme)
