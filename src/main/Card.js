@@ -10,9 +10,9 @@ const Card = ({user}) => {
     const dateJoined = date.getDate()
     const year = date.getFullYear()
     const month = months[date.getMonth()]
-    
+
     return (
-        <div className="card"
+        <div className="card gsap__load"
             role="region"
             aria-live="polite">
 

@@ -1,6 +1,6 @@
 const Form = (props) => {
     return (
-        <form className="search__container"
+        <form className="search__container gsap__load"
             onSubmit={props.handleSubmit}>
 
             <label htmlFor="search__user"

@@ -52,7 +52,7 @@ const Header = () => {
     },[theme])
 
     return (
-        <header className="header">
+        <header className="header gsap__load">
             <h1 className="app__title" ref={headerTitle}>
                 devfinder
             </h1>
