@@ -46,8 +46,8 @@ const Header = () => {
     useEffect(() => {
         gsap.from(headerTitle.current, {
             y: 10,
-            ease: "power3.out",
-            duration: 2,
+            ease: "bounce",
+            duration: 1,
         })
     },[theme])
 
