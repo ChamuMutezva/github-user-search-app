@@ -49,7 +49,7 @@ const Header = () => {
             ease: "power3.out",
             duration: 2,
         })
-    })
+    },[theme])
 
     return (
         <header className="header">
