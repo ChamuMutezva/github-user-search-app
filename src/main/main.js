@@ -3,11 +3,7 @@ import { gsap } from 'gsap'
 import axios from 'axios'
 import Form from './Form'
 import Card from './Card'
-/*import LocationImg from '../assets/icon-location.svg'
-import CompanyImg from '../assets/icon-company.svg'
-import Blog from '../assets/icon-website.svg'
-import Twitter from '../assets/icon-twitter.svg'
-*/
+
 const Main = () => {
     const [user, setUser] = useState({})
 
@@ -20,7 +16,7 @@ const Main = () => {
     }, [])
 
     async function handleSubmit(evt) {
-        
+
         evt.preventDefault()
         const err__span = document.querySelector(".err")
         const search__element = document.querySelector(".search__user")
