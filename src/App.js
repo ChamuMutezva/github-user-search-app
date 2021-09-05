@@ -1,6 +1,6 @@
 import '../src/sass/app.scss'
-import Header from './header/Header';
-import Main from './main/Main'
+import Header from './header/header';
+import Main from './main/main'
 function App() {  
 
   return (
