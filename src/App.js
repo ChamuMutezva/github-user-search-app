@@ -1,7 +1,7 @@
 //import { gsap } from 'gsap'
 import '../src/sass/app.scss'
-import Header from './header/header';
-import Main from './main/main'
+import Header from './Header/Header';
+import Main from './Main/Main'
 function App() {  
 
   /*const tl = gsap.timeline({paused: true})

@@ -65,7 +65,7 @@ const Header = () => {
             {/* If theme is true return "Dark" if not return "Light". */}
             <span className="mode__state">{theme ? "Dark" : "Light"}</span>
             {/* If theme is true return Moon element if not return Sun element. */}
-            <img className="mode__img" src={theme ? Moon : Sun} alt="" />
+            <img className="mode__img" src={theme ? Sun : Moon} alt="" />
           </span>
         </button>
       </header>
